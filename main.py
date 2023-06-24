@@ -1,12 +1,16 @@
 import pygame, sys
 from settings import *
+from level import Level
 
+version = '1.1.0'
 
 class Game:
 	def __init__(self):
 		pygame.init()
 		self.screen = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
+		pygame.display.set_caption(f'-- Kary_Pixel -- V{version}')
 		self.clock = pygame.time.Clock()
+		self.level = Level()
 		
 
 	def run(self):
@@ -17,6 +21,7 @@ class Game:
 					sys.exit()
   
 			dt = self.clock.tick() / 1000
+			self.level.run(dt)
 			pygame.display.update()
 
 if __name__ == '__main__':
