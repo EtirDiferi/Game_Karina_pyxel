@@ -11,7 +11,7 @@ class Level:
         self.setup()
 
     def setup(self):
-        self.player = Player(pos=(360,640), group=self.all_sprites)
+        self.player = Player(pos=(640,360), group=self.all_sprites)
 
 
     
@@ -19,6 +19,6 @@ class Level:
 
     def run(self,dt):
         print('run game')
-        self.display_surface.fill('black')
+        self.display_surface.fill('blue')
         self.all_sprites.draw(self.display_surface)
         self.all_sprites.update()
