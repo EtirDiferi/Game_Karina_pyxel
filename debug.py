@@ -1,6 +1,9 @@
 import pygame
 from player import *
 
+
+#UWU
+
 pygame.init()
 font = pygame.font.Font(None,30)
 

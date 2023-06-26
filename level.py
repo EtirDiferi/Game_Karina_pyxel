@@ -2,6 +2,8 @@ import pygame
 from settings import *
 from player import Player
 
+#UWU
+
 class Level:
     def __init__(self):
         # get the display surface
