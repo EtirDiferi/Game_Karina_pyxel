@@ -3,7 +3,7 @@ from settings import *
 from level import Level
 from debug import *
 
-version = '1.1.0'
+version = '1.2.0'
 
 class Game:
 	def __init__(self):
@@ -21,7 +21,7 @@ class Game:
 					pygame.quit()
 					sys.exit()
   
-			dt = self.clock.tick() / 1000
+			dt = self.clock.tick(100) / 1000
 			self.level.run(dt)
 			ddebug()
 
