@@ -3,7 +3,7 @@ from settings import *
 from level import Level
 from debug import *
 
-version = '1.2.0'
+version = '1.2.2 uwu '
 
 class Game:
 	def __init__(self):
