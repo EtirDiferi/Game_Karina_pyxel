@@ -4,7 +4,7 @@ from level import Level
 from debug import *
 
 
-version = '1.4.0 uwu'
+version = '1.4.1 uwu'
 
 class Game:
 	def __init__(self):

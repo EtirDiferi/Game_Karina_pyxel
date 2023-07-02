@@ -8,7 +8,7 @@ import random
 
 
 def obtener_valor_aleatorio():
-    valores = [0, 10]
+    valores = ['up', 'down']
     valor_aleatorio = random.choice(valores)
     return valor_aleatorio
 
@@ -20,7 +20,7 @@ class Player(pygame.sprite.Sprite):
         self.animations = None
         self.import_assets()
         self.status = 'down_idle'
-        self.frame_index = 1
+        self.frame_index = 0
 
         # general setup 
         self.image = self.animations[self.status][self.frame_index]
@@ -30,6 +30,9 @@ class Player(pygame.sprite.Sprite):
         self.direction = pygame.math.Vector2()
         self.pos = pygame.math.Vector2(self.rect.center)
         self.speed = 200
+
+        # tools
+        self.selected_tool = 'axe'
 
     def import_assets(self):
         self.animations = {'up': [], 'down': [], 'left': [], 'right': [],
@@ -47,25 +50,38 @@ class Player(pygame.sprite.Sprite):
         self.frame_index += 4 * dt
         if self.frame_index >= len(self.animations[self.status]):
             self.frame_index = 0
-            print(self.frame_index)
+
         self.image = self.animations[self.status][int(self.frame_index)]
 
     def input(self):
         keys = pygame.key.get_pressed()
 
+        # directions
         if keys[pygame.K_UP]:
             self.direction.y = -1
+            self.status = 'up'
         elif keys[pygame.K_DOWN]:
             self.direction.y = 1
+            self.status = 'down'
         else:
             self.direction.y = 0
 
         if keys[pygame.K_RIGHT]:
             self.direction.x = 1
+            self.status = 'right'
         elif keys[pygame.K_LEFT]:
             self.direction.x = -1
+            self.status = 'left'
         else:
             self.direction.x = 0
+
+        # tool use
+        if keys[pygame.K_SPACE]:
+
+
+    def get_status(self):
+        if self.direction.magnitude() == 0:
+            self.status = self.status.split('_')[0] + '_idle'
 
     def move(self, dt):
 
@@ -83,5 +99,6 @@ class Player(pygame.sprite.Sprite):
 
     def update(self, dt):
         self.input()
+        self.get_status()
         self.move(dt)
         self.animate(dt)
