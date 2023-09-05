@@ -1,7 +1,29 @@
 # Game_Karina_pyxel
 Primer juego basico para 2d. Kari
 -----------------------------------------------------------------------------------------------------------------------------
-texto extra prueba
+texto:
+-1- En setings.py hay info de cosas interesantes,
+
+-2- Min: 3:00 -- Hay el main.py, con Class Game,  y dentro tiene el init, y un run method (donde casi todo se ejecuta en el run) [img1]
+
+-3- Min: 5:48 -- Nuevo objeto llamado Level.py (para dejar limpio el main. se crea un nuevo objeto --> el level.py)
+
+-4- Min: 10:20 -- crear un personaje.
+
+-5- Min: 18:00 -- moverse
+
+-6- Min: 30:26  -- sprites en sucesion creo
+
+-7- Min: 
+-8- Min: 
+-9- Min: 
+-10- Min: 
+-11- Min: 
+-12- Min: 
+-13- Min: 
+-14- Min: 
+-15- Min: 
+
 
 -----------------------------------------------------------------------------------------------------------------------------
 Game Design Document Outline
